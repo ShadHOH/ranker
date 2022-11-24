@@ -1,0 +1,7 @@
+git+https://github.com/ShadHOH/shad_test
+pandas
+pyaltmetric
+feedparser
+argparse
+urllib3
+bs4
