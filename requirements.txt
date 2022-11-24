@@ -1,4 +1,4 @@
-git+https://github.com/ShadHOH/shad_test
+git+https://github.com/ShadHOH/eutils_modified
 pandas
 pyaltmetric
 feedparser
