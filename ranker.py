@@ -54,7 +54,7 @@ def pubmed(keyword, output, verbose=10, retmax=10):
                                      int(round(alt_info["score"], 0)) if alt_info is not None else 0]  # Popularity score given by Altmetric. Defaults to 0 if score is not registered by Altmetric,
             i += 1
             if i % verbose == 0:
-                print(f'{i} articles have been processed')
+                print(f"{i} articles have been processed")
 
         except StopIteration:  # When iterator is empty, return dataframe as .csv-file
             return posts_overview.to_csv(str(output) + ".csv", sep=";")
@@ -85,16 +85,17 @@ if __name__ == "__main__":
                         "--number",
                         type=int,
                         choices=range(0,9999),
-                        help="Max. number of articles to be returned (default is 10)",
+                        help="Number of articles to be returned (max is 9999; default is 10)",
                         default=10,
-                        metavar="1-9999",
+                        metavar="",
                         )
     parser.add_argument("-v",
                         "--verbose",
                         type=int,
-                        choices=[1, 10, 100, 1000],
-                        help="Updates you every time 1, 10, 100 or 1000 articles have been processed (default is 10)",
-                        default=10)
+                        choices=range(0,1000000),
+                        help="Updates you every time X number of articles have been processed (default is 10)",
+                        default=10,
+                        metavar="")
 
     # Implementing arguments
     args = parser.parse_args()
